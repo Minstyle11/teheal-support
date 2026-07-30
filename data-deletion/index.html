@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="鐵休 TeHeal 本機資料、備份與完整刪除方式。">
+  <title>資料保留與刪除｜鐵休 TeHeal</title>
+  <link rel="stylesheet" href="/teheal-support/assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要內容</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/teheal-support/">
+        <span class="brand-mark" aria-hidden="true">鐵</span>
+        <span class="brand-name"><strong>鐵休</strong><small>TeHeal</small></span>
+      </a>
+      <nav class="site-nav" aria-label="主要導覽">
+        <a href="/teheal-support/privacy/">隱私權</a>
+        <a href="/teheal-support/support/">支援</a>
+        <a href="/teheal-support/terms/">使用條款</a>
+        <a href="/teheal-support/data-deletion/" aria-current="page">資料刪除</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="content policy">
+    <header class="page-intro">
+      <p class="eyebrow">DATA CONTROL</p>
+      <h1>資料保留與刪除</h1>
+      <p class="lede">鐵休沒有雲端使用者帳號。財務資料預設在裝置，使用者可直接檢視、修正、匯出或完整清除。</p>
+      <div class="meta">
+        <span>版本 1.0</span>
+        <span>生效日 2026 年 7 月 30 日</span>
+      </div>
+    </header>
+
+    <h2>資料保留原則</h2>
+    <ol>
+      <li>預設本機優先、資料最小化與目的限制。</li>
+      <li>金融秘密不進一般資料庫、log、回饋、診斷、測試資料、原始碼 repository 或一般備份。</li>
+      <li>使用者可理解資料在哪裡、如何清除，以及哪些另存檔案不會隨 App 刪除。</li>
+      <li>更新與匯入證據用於資料完整性，不會在一般編輯中悄悄改寫。</li>
+    </ol>
+
+    <h2>保留範圍</h2>
+    <table>
+      <thead>
+        <tr><th>資料</th><th>位置</th><th>刪除方式</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>資產、負債、投資、設定、快照與模型資料</td><td>App 容器</td><td>App 內刪除、完整清除或移除 App</td></tr>
+        <tr><td>App 自有加密金鑰</td><td>iOS Keychain</td><td>使用 App 內完整清除流程</td></tr>
+        <tr><td>StoreKit 訂閱狀態</td><td>Apple</td><td>到 Apple 訂閱管理取消</td></tr>
+        <tr><td>本機產品回饋</td><td>App 容器</td><td>完整清除或移除 App</td></tr>
+        <tr><td>加密備份、CSV、PDF 與診斷檔</td><td>使用者選擇的 Files、iCloud Drive 或其他目的地</td><td>由使用者到該目的地個別刪除</td></tr>
+      </tbody>
+    </table>
+
+    <h2>完整清除本機資料</h2>
+    <ol>
+      <li>開啟鐵休。</li>
+      <li>前往「設定」。</li>
+      <li>選擇「隱私與資料控制」。</li>
+      <li>選擇「清除全部本機資料」。</li>
+      <li>閱讀影響範圍並輸入畫面要求的確認文字。</li>
+      <li>完成裝置驗證。</li>
+      <li>確認 App 回報財務資料、本機回饋、偏好、App 自有 Keychain 項目及復原副本的清除結果。</li>
+    </ol>
+
+    <aside class="notice" aria-label="刪除限制">
+      <strong>完整清除不會取消 Apple 訂閱，也不會刪除另存檔案。</strong>
+      若曾把備份、CSV、PDF 或診斷存到 Files、iCloud Drive 或其他 App，必須到各目的地自行刪除。
+    </aside>
+
+    <h2>刪除單筆與清除範例</h2>
+    <p>使用者可在對應的帳戶、投資、負債、快照或規劃頁刪除或修正單筆資料。清除範例資料只會清除明確標記為虛構的範例內容，不等同完整清除真實資料。</p>
+
+    <h2>刪除 App</h2>
+    <p>刪除 App 會移除 iOS App container，但不應把它視為可驗證的完整金鑰銷毀流程。需要完整清除時，請先在 App 內執行「清除全部本機資料」，確認完成後再移除 App。</p>
+
+    <h2>取消鐵休 Plus</h2>
+    <ol>
+      <li>開啟 iOS「設定」。</li>
+      <li>點選 Apple Account。</li>
+      <li>選擇「訂閱項目」。</li>
+      <li>選擇鐵休並依 Apple 畫面取消。</li>
+    </ol>
+    <p>取消訂閱不會自動刪除本機資料；清除本機資料也不會自動取消訂閱。</p>
+
+    <h2>支援往來刪除</h2>
+    <p>若曾主動寄信給客服，可由同一電子郵件地址寄至 <a href="mailto:teheal.tw@gmail.com">teheal.tw@gmail.com</a> 要求刪除支援往來。為避免冒用，我們可能需要確認請求來自原寄件地址，但不會要求金融密碼、OTP、token 或完整帳號。</p>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© 2026 鐵休 TeHeal。由 App Store 頁面所列的個人開發者提供。</span>
+      <div class="footer-links">
+        <a href="/teheal-support/">政策中心</a>
+        <a href="/teheal-support/privacy/">隱私權</a>
+        <a href="/teheal-support/support/">支援</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
