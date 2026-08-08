@@ -29,8 +29,8 @@
       <h1>資料保留與刪除</h1>
       <p class="lede">鐵休沒有雲端使用者帳號。財務資料預設在裝置，使用者可直接檢視、修正、匯出或完整清除。</p>
       <div class="meta">
-        <span>版本 1.0</span>
-        <span>生效日 2026 年 7 月 30 日</span>
+        <span>版本 1.1</span>
+        <span>更新日 2026 年 8 月 8 日</span>
       </div>
     </header>
 
@@ -51,7 +51,8 @@
         <tr><td>資產、負債、投資、設定、快照與模型資料</td><td>App 容器</td><td>App 內刪除、完整清除或移除 App</td></tr>
         <tr><td>App 自有加密金鑰</td><td>iOS Keychain</td><td>使用 App 內完整清除流程</td></tr>
         <tr><td>StoreKit 訂閱狀態</td><td>Apple</td><td>到 Apple 訂閱管理取消</td></tr>
-        <tr><td>本機產品回饋</td><td>App 容器</td><td>完整清除或移除 App</td></tr>
+        <tr><td>尚未送出的產品回饋</td><td>App 容器內受保護佇列</td><td>App 內刪除、完整清除或移除 App</td></tr>
+        <tr><td>已送出的產品回饋</td><td>Cloudflare Workers 與 D1</td><td>App 內回執刪除；最長 180 天後自動刪除</td></tr>
         <tr><td>加密備份、CSV、PDF 與診斷檔</td><td>使用者選擇的 Files、iCloud Drive 或其他目的地</td><td>由使用者到該目的地個別刪除</td></tr>
       </tbody>
     </table>
@@ -64,7 +65,7 @@
       <li>選擇「清除全部本機資料」。</li>
       <li>閱讀影響範圍並輸入畫面要求的確認文字。</li>
       <li>完成裝置驗證。</li>
-      <li>確認 App 回報財務資料、本機回饋、偏好、App 自有 Keychain 項目及復原副本的清除結果。</li>
+      <li>確認 App 回報財務資料、本機回饋、偏好、App 自有 Keychain 項目及復原副本的清除結果。若有已送出的回饋，App 也會提出遠端刪除；離線時會在恢復連線後重試。</li>
     </ol>
 
     <aside class="notice" aria-label="刪除限制">
@@ -74,6 +75,14 @@
 
     <h2>刪除單筆與清除範例</h2>
     <p>使用者可在對應的帳戶、投資、負債、快照或規劃頁刪除或修正單筆資料。清除範例資料只會清除明確標記為虛構的範例內容，不等同完整清除真實資料。</p>
+
+    <h2>刪除已送出的產品回饋</h2>
+    <ol>
+      <li>開啟「設定 ＞ 意見回饋」。</li>
+      <li>在回饋紀錄選擇刪除；App 會使用只保存在原裝置的刪除憑證提出要求。</li>
+      <li>若當下離線，App 先移除本機留言內容，只保留不含留言的回執與刪除要求，恢復連線後自動重試。</li>
+    </ol>
+    <p>若先移除 App 而未執行上述流程，刪除憑證也會一併消失；遠端回饋仍會在收到後最長 180 天自動刪除。需要協助時可寄信至 <a href="mailto:teheal.tw@gmail.com">teheal.tw@gmail.com</a>，但請勿附金融秘密。</p>
 
     <h2>刪除 App</h2>
     <p>刪除 App 會移除 iOS App container，但不應把它視為可驗證的完整金鑰銷毀流程。需要完整清除時，請先在 App 內執行「清除全部本機資料」，確認完成後再移除 App。</p>
